@@ -1188,7 +1188,7 @@ body {
   max-width: 60%;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 767px) {
   .about-me {
     width: 50%;
   }
