@@ -1185,12 +1185,12 @@ body {
 }
 
 .about-me {
-  max-width: 100%;
+  max-width: 60%;
 }
 
 @media (max-width: 800px) {
   .about-me {
-    text-align: center;
+    max-width: 100%;
   }
 }
 /* ******************** ******************** ******************* */
