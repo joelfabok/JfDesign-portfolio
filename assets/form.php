@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Validation
     if (empty($name) || empty($email)) {
-        echo 'Please fill in all required fields.';
+        alert('Please fill in all required fields.');
         exit;
     }
 
