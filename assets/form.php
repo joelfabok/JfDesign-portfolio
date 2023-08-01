@@ -21,9 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Send email
     if (mail($to, $subject, $message)) {
-        echo("thank you for your submission.")
         header( "Location: ../index.html" ); 
-        
       exit; 
     } else {
         echo 'Oops! Something went wrong. Please try again later.';
