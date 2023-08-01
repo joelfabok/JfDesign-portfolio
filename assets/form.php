@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Retrieve form data
     $options = $_POST['options'] ?? [];
@@ -9,29 +7,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Validation
     if (empty($name) || empty($email)) {
-        // Set error status in session
-        $_SESSION['form_status'] = 'error';
-        header("Location: https://www.joelfabok.com");
+        // Redirect back to index.html with an error message
+        header("Location: https://www.joelfabok.com?error=1");
         exit;
     }
 
     // Prepare email message
     $to = 'joelfabok@gmail.com'; 
-    $subject = 'Work Request';
+    $subject = 'Work Request From joelfabok.com';
     $message = 'Options: ' . implode(', ', $options) . "\n";
     $message .= 'Name: ' . $name . "\n";
     $message .= 'Email: ' . $email . "\n";
 
     // Send email
     if (mail($to, $subject, $message)) {
-        // Set success status in session
-        $_SESSION['form_status'] = 'success';
-    } else {
-        // Set error status in session
-        $_SESSION['form_status'] = 'error';
-    }
+        // Notify the user about successful submission
+        session_start();
+        $_SESSION['form_success'] = true;
 
-    header("Location: https://www.joelfabok.com");
-    exit;
+        // Redirect back to index.html with success message
+        header("Location: https://www.joelfabok.com?success=1");
+        exit;
+    } else {
+        // Redirect back to index.html with an error message
+        header("Location: https://www.joelfabok.com?error=2");
+        exit;
+    }
 }
 ?>

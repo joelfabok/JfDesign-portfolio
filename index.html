@@ -464,34 +464,34 @@
     <!-- Form Validation Starts -->
     <!-- ---------------------- -->
     <script>
-      // Function to show custom notification with a given message and type (success or error)
-      function showNotification(message, type) {
-        var notificationElement = document.getElementById("notification");
-        notificationElement.textContent = message;
-        notificationElement.classList.add(type);
-        notificationElement.style.display = "block";
-
-        // Hide the notification after a few seconds (adjust the timeout as needed)
-        setTimeout(function () {
-          notificationElement.style.display = "none";
-          notificationElement.classList.remove(type);
-        }, 5000); // 5000 milliseconds = 5 seconds (adjust as needed)
+      // Function to read query parameters from the URL
+      function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
       }
 
-      // Check for session status and show notification
+      // Check for success or error query parameters and show notification
       document.addEventListener("DOMContentLoaded", function () {
-        var formStatus =
-          "<?php echo isset($_SESSION['form_status']) ? $_SESSION['form_status'] : ''; ?>";
-        if (formStatus === "success") {
-          showNotification("Form submitted successfully!", "success");
-        } else if (formStatus === "error") {
-          showNotification(
-            "Oops! Something went wrong. Please try again later.",
-            "error"
-          );
-        }
+        var successParam = getParameterByName("success");
+        var errorParam = getParameterByName("error");
 
-        // Clear the session status after displaying the notification
+        if (successParam === "1") {
+          // Show success notification
+          alert(
+            "Your form has been submitted successfully! We will get back to you as soon as we can."
+          );
+        } else if (errorParam === "1") {
+          // Show error notification for missing required fields
+          alert("Please fill in all required fields.");
+        } else if (errorParam === "2") {
+          // Show error notification for email send failure
+          alert("Oops! Something went wrong. Please try again later.");
+        }
       });
     </script>
     <!-- -------------------- -->
