@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Prepare email message
     $to = 'joelfabok@gmail.com'; 
     $subject = 'Work Request';
+    $headers = "From: joelfabok.com Form" . "\r\n";
     $message = 'Options: ' . implode(', ', $options) . "\n";
     $message .= 'Name: ' . $name . "\n";
     $message .= 'Email: ' . $email . "\n";
