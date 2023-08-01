@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $message = 'Options: ' . implode(', ', $options) . "\n";
     $message .= 'Name: ' . $name . "\n";
     $message .= 'Email: ' . $email . "\n";
+    $headers .= "X-Mailer: PHP/" . phpversion();
 
     // Send email
     if (mail($to, $subject, $message)) {
