@@ -21,8 +21,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Send email
     if (mail($to, $subject, $message)) {
-        header( "Location: ../index.html" ); 
-      exit; 
+        // Notify the user about successful submission
+        session_start();
+        $_SESSION['form_success'] = true;
+
+        // Redirect back to index.html
+        header("Location: index.html");
+        exit;
     } else {
         echo 'Oops! Something went wrong. Please try again later.';
     }
