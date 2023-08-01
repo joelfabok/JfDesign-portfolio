@@ -460,16 +460,28 @@
         <li>Hire me</li>
       </ul>
     </div>
+    <!-- ---------------------- -->
+    <!-- Form Validation Starts -->
+    <!-- ---------------------- -->
+    <!-- Custom notification box -->
+    <div id="notification" class="custom-notification"></div>
+
     <script>
       // Function to read query parameters from the URL
-      function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-          results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return "";
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      // ... (same as previous code)
+
+      // Function to show custom notification with a given message and type (success or error)
+      function showNotification(message, type) {
+        var notificationElement = document.getElementById("notification");
+        notificationElement.textContent = message;
+        notificationElement.classList.add(type);
+        notificationElement.style.display = "block";
+
+        // Hide the notification after a few seconds (adjust the timeout as needed)
+        setTimeout(function () {
+          notificationElement.style.display = "none";
+          notificationElement.classList.remove(type);
+        }, 5000); // 5000 milliseconds = 5 seconds (adjust as needed)
       }
 
       // Check for success or error query parameters and show notification
@@ -478,17 +490,21 @@
         var errorParam = getParameterByName("error");
 
         if (successParam === "1") {
-          // Show success notification
-          alert("Form submitted successfully!");
+          showNotification("Form submitted successfully!", "success");
         } else if (errorParam === "1") {
-          // Show error notification for missing required fields
-          alert("Please fill in all required fields.");
+          showNotification("Please fill in all required fields.", "error");
         } else if (errorParam === "2") {
-          // Show error notification for email send failure
-          alert("Oops! Something went wrong. Please try again later.");
+          showNotification(
+            "Oops! Something went wrong. Please try again later.",
+            "error"
+          );
         }
       });
     </script>
+    <!-- -------------------- -->
+    <!-- Form Validation Ends -->
+    <!-- -------------------- -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script>
       window.jQuery ||
