@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Prepare email message
     $to = 'joelfabok@gmail.com'; 
     $subject = 'Work Request';
+    $headers = "From: noreply@joelfabok.com\n";
     $message = 'Options: ' . implode(', ', $options) . "\n";
     $message .= 'Name: ' . $name . "\n";
     $message .= 'Email: ' . $email . "\n";
@@ -24,11 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo 'Oops! Something went wrong. Please try again later.';
     }
+    return true; 
 }
 ?>
-Make sure to replace 'your_email@example.com' with the actual email address where you want to receive the form submissions. Also, ensure that your server has email sending capabilities configured.
-
-Note that the checkbox values will be submitted as an array with the name options[]. The code checks for the presence of the options array and retrieves its
-
-
 
