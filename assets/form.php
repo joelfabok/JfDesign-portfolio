@@ -14,12 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Prepare email message
     $to = 'joelfabok@gmail.com'; 
-    $subject = 'Work Request';
-    $headers = "From: joelfabok.com Form" . "\r\n";
+    $subject = 'Work Request From joelfabok.com';
     $message = 'Options: ' . implode(', ', $options) . "\n";
     $message .= 'Name: ' . $name . "\n";
     $message .= 'Email: ' . $email . "\n";
-    $headers .= "X-Mailer: PHP/" . phpversion();
 
     // Send email
     if (mail($to, $subject, $message)) {
