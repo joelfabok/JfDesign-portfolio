@@ -22,6 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Send email
     if (mail($to, $subject, $message)) {
         header( "Location: ../index.html" ); 
+        echo '<script type ="text/JavaScript">';  
+echo 'alert("JavaScript Alert Box by PHP")';  
+echo '</script>';  
       exit; 
     } else {
         echo 'Oops! Something went wrong. Please try again later.';
