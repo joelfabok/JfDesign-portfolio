@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validation
     if (empty($name) || empty($email)) {
         // Redirect back to index.html with an error message
-        header("Location: ../index.html?error=1");
+        header("Location: https://www.joelfabok.com?error=1");
         exit;
     }
 
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     } else {
         // Redirect back to index.html with an error message
-        header("Location: ../index.html?error=2");
+        header("Location: https://www.joelfabok.com?error=2");
         exit;
     }
 }
