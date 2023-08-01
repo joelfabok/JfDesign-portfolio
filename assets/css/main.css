@@ -718,7 +718,7 @@ body {
 }
 @media (max-width: 900px) {
   .intro--banner {
-    height: 380px;
+    height: 500px;
   }
   .intro--banner h1 {
     font-size: 55px;
@@ -1166,7 +1166,7 @@ body {
   }
   .about--banner h2 {
     margin-top: 0;
-    font-size: 55px;
+    font-size: 35px;
   }
   .about--banner h2::before {
     top: 43px;
@@ -1188,9 +1188,10 @@ body {
   max-width: 60%;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   .about-me {
     max-width: 100%;
+    font-size: 12px;
   }
 }
 /* ******************** ******************** ******************* */
