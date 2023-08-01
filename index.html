@@ -460,7 +460,35 @@
         <li>Hire me</li>
       </ul>
     </div>
+    <script>
+      // Function to read query parameters from the URL
+      function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
 
+      // Check for success or error query parameters and show notification
+      document.addEventListener("DOMContentLoaded", function () {
+        var successParam = getParameterByName("success");
+        var errorParam = getParameterByName("error");
+
+        if (successParam === "1") {
+          // Show success notification
+          alert("Form submitted successfully!");
+        } else if (errorParam === "1") {
+          // Show error notification for missing required fields
+          alert("Please fill in all required fields.");
+        } else if (errorParam === "2") {
+          // Show error notification for email send failure
+          alert("Oops! Something went wrong. Please try again later.");
+        }
+      });
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script>
       window.jQuery ||

@@ -7,14 +7,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Validation
     if (empty($name) || empty($email)) {
-        alert('Please fill in all required fields.');
+        // Redirect back to index.html with an error message
+        header("Location: ../index.html?error=1");
         exit;
     }
 
     // Prepare email message
     $to = 'joelfabok@gmail.com'; 
     $subject = 'Work Request';
-    $headers = "From: noreply@joelfabok.com\n";
     $message = 'Options: ' . implode(', ', $options) . "\n";
     $message .= 'Name: ' . $name . "\n";
     $message .= 'Email: ' . $email . "\n";
@@ -25,13 +25,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         session_start();
         $_SESSION['form_success'] = true;
 
-        // Redirect back to index.html
-        header("Location: ../index.html");
+        // Redirect back to index.html with success message
+        header("Location: ../index.html?success=1");
         exit;
     } else {
-        echo 'Oops! Something went wrong. Please try again later.';
+        // Redirect back to index.html with an error message
+        header("Location: ../index.html?error=2");
+        exit;
     }
-    return true; 
 }
 ?>
-
