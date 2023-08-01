@@ -1166,7 +1166,7 @@ body {
   }
   .about--banner h2 {
     margin-top: 0;
-    font-size: 35px;
+    font-size: 40px;
   }
   .about--banner h2::before {
     top: 43px;
@@ -1191,7 +1191,7 @@ body {
 @media (max-width: 600px) {
   .about-me {
     max-width: 100%;
-    font-size: 12px;
+    font-size: 15px;
   }
 }
 /* ******************** ******************** ******************* */

@@ -268,13 +268,18 @@
                   <!------- Start Of Form ------->
                   <!----------------------------->
                   <!-- checkout formspree.io for easy form setup -->
-                  <form class="work-request" action="/form.php" method="POST">
+                  <form
+                    class="work-request"
+                    action="assets/form.php"
+                    method="POST"
+                  >
                     <div class="work-request--options">
                       <span class="options-a">
                         <input
                           id="opt-1"
                           type="checkbox"
                           value="Web Management"
+                          name="options[]"
                         />
                         <label for="opt-1">
                           <svg
@@ -302,6 +307,7 @@
                           id="opt-2"
                           type="checkbox"
                           value="graphic design"
+                          name="options[]"
                         />
                         <label for="opt-2">
                           <svg
@@ -332,7 +338,12 @@
                         />
                       </span>
                       <span class="options-b">
-                        <input id="opt-4" type="checkbox" value="ux design" />
+                        <input
+                          id="opt-4"
+                          type="checkbox"
+                          value="ux design"
+                          name="options[]"
+                        />
                         <label for="opt-4">
                           <svg
                             version="1.1"
@@ -355,7 +366,12 @@
                           </svg>
                           UX Design
                         </label>
-                        <input id="opt-5" type="checkbox" value="webdesign" />
+                        <input
+                          id="opt-5"
+                          type="checkbox"
+                          value="webdesign"
+                          name="options[]"
+                        />
                         <label for="opt-5">
                           <svg
                             version="1.1"
@@ -378,7 +394,12 @@
                           </svg>
                           Webdesign
                         </label>
-                        <input id="opt-6" type="checkbox" value="marketing" />
+                        <input
+                          id="opt-6"
+                          type="checkbox"
+                          value="social marketing"
+                          name="options[]"
+                        />
                         <label for="opt-6">
                           <svg
                             version="1.1"
@@ -405,11 +426,21 @@
                     </div>
                     <div class="work-request--information">
                       <div class="information-name">
-                        <input id="name" type="text" spellcheck="false" />
+                        <input
+                          id="name"
+                          type="text"
+                          spellcheck="false"
+                          name="name"
+                        />
                         <label for="name">Name</label>
                       </div>
                       <div class="information-email">
-                        <input id="email" type="email" spellcheck="false" />
+                        <input
+                          id="email"
+                          type="email"
+                          spellcheck="false"
+                          name="email"
+                        />
                         <label for="email">Email</label>
                       </div>
                     </div>
