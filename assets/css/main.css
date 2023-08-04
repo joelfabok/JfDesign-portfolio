@@ -1285,6 +1285,12 @@ body {
   .about--name {
     display: none;
   }
+  .about--banner h1 {
+    display: none;
+  }
+  .about--banner p {
+    display: none;
+  }
 }
 
 .about-me {
