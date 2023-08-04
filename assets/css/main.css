@@ -34,11 +34,101 @@
   font-weight: 300;
   font-style: normal;
 } /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+
+/* ****** ****** ****** */
+/****** Main Content ******/
+/* ****** ****** ****** */
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
+.css-typing h1 {
+  border-right: 0.15em solid #0f33ff;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.css-typing h1:nth-child(1) {
+  width: 7em;
+  -webkit-animation: type 2s steps(40, end);
+  animation: type 2s steps(40, end);
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.css-typing h1:nth-child(2) {
+  width: 7.5em;
+  opacity: 0;
+  -webkit-animation: type2 2s steps(40, end),
+    blink 0.5s step-end infinite alternate;
+  animation: type2 2s steps(40, end), blink 0.5s step-end infinite alternate;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: 0.15em solid #0f33ff;
+  }
+  100% {
+    border: none;
+  }
+}
+
+@-webkit-keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: 0.15em solid #0f33ff;
+  }
+  100% {
+    border: none;
+  }
+}
+
+@keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    border-color: tranparent;
+  }
+}
+
 body {
   margin: 0;
 }
@@ -647,7 +737,7 @@ body {
   position: relative;
   font-size: 68px;
   font-weight: 900;
-  line-height: 1;
+  line-height: 1.3;
   z-index: 1;
 }
 .intro--banner button {
@@ -1077,9 +1167,16 @@ body {
 }
 .about--banner img {
   position: absolute;
-  bottom: -90px;
+  bottom: 10%;
   right: -12px;
 }
+.about--name {
+  position: absolute;
+  bottom: -12%;
+  right: -12px;
+  max-width: 38%;
+}
+
 .about--options {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1153,6 +1250,9 @@ body {
   .about--banner img {
     width: 315px;
   }
+  .about--name {
+    width: 315px;
+  }
 }
 @media (max-width: 600px) {
   .about--banner {
@@ -1180,6 +1280,9 @@ body {
     display: none;
   }
   .about--options {
+    display: none;
+  }
+  .about--name {
     display: none;
   }
 }
