@@ -847,10 +847,10 @@ body {
 }
 @media (max-width: 600px) {
   .intro--banner {
-    height: 360px;
+    height: 400px;
   }
   .intro--banner h1 {
-    font-size: 55px;
+    font-size: 43px;
   }
   .intro--banner img {
     display: none;
