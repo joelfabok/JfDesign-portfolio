@@ -4,6 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $options = $_POST['options'] ?? [];
     $name = $_POST['name'] ?? '';
     $email = $_POST['email'] ?? '';
+    $comments = $_POST['comments'] ?? '';
 
     // Validation
     if (empty($name) || empty($email)) {
@@ -14,10 +15,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Prepare email message
     $to = 'joel@spheredigital.ca'; 
-    $subject = 'Work Request From joelfabok.com';
+    $subject = 'Work Request From Spheredigital.ca';
     $message = 'Options: ' . implode(', ', $options) . "\n";
     $message .= 'Name: ' . $name . "\n";
     $message .= 'Email: ' . $email . "\n";
+    $message .= 'Comments: ' . $comments . "\n";
 
     // Send email
     if (mail($to, $subject, $message)) {
