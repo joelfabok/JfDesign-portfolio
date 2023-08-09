@@ -100,6 +100,10 @@
                       </svg>
                       <span class="btn-background"></span>
                     </button>
+                    <div class="scroll-tag" id="scroll-tag">
+                      <span class="arrow"></span>
+                      Scroll
+                    </div>
                   </div>
                 </div>
               </li>
@@ -441,6 +445,16 @@
                         />
                         <label for="email">Email</label>
                       </div>
+
+                      <div class="information-comments">
+                        <input
+                          id="comments"
+                          type="text"
+                          spellcheck="false"
+                          name="comments"
+                        />
+                        <label for="name">Comments</label>
+                      </div>
                     </div>
                     <input type="submit" value="Send Request" />
                   </form>
@@ -504,5 +518,19 @@
         );
     </script>
     <script src="assets/js/functions-min.js"></script>
+    <script>
+      // Scroll to the "Works" section when the scroll tag is clicked
+      document
+        .getElementById("scroll-tag")
+        .addEventListener("click", function () {
+          // Get the "Works" section
+          var worksSection = document.querySelector(".work");
+
+          if (worksSection) {
+            // Scroll to the "Works" section
+            worksSection.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+    </script>
   </body>
 </html>

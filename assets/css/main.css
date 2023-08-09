@@ -899,6 +899,7 @@ body {
 @media (max-width: 1180px) {
   .work {
     max-width: 100%;
+    margin-top: -50px;
   }
 }
 .work h2 {
@@ -1091,6 +1092,7 @@ body {
 @media (max-width: 1180px) {
   .about {
     max-width: 100%;
+    margin-top: -50px;
   }
 }
 .about--banner {
@@ -1544,15 +1546,18 @@ body {
   margin-bottom: 60px;
 }
 .work-request--information .information-name,
-.work-request--information .information-email {
+.work-request--information .information-email,
+.work-request--information .information-comments {
   position: relative;
   width: 45%;
   height: 50px;
   font-size: 30px;
   font-weight: 300;
+  margin: 10px;
 }
 .work-request--information input[type="text"],
-.work-request--information input[type="email"] {
+.work-request--information input[type="email"],
+.work-request--information input[type="comments"] {
   width: 100%;
   padding: 0 0 5px 0;
   background-color: transparent;
@@ -1561,7 +1566,8 @@ body {
   border-radius: 0;
 }
 .work-request--information input[type="text"]:focus,
-.work-request--information input[type="email"]:focus {
+.work-request--information input[type="email"]:focus,
+.work-request--information input[type="comments"]:focus {
   outline: none;
   background-color: #0c0c0c;
 }
@@ -1621,11 +1627,13 @@ body {
     margin-bottom: 30px;
   }
   .work-request--information .information-name,
-  .work-request--information .information-email {
+  .work-request--information .information-email,
+  .work-request--information .information-comments {
     height: 40px;
     font-size: 24px;
   }
 }
+
 .perspective {
   position: relative;
   width: 100%;
@@ -1896,3 +1904,45 @@ body {
 /* ------------- outer about nav End---------------- */
 /* ------------- outer about nav End---------------- */
 /* ------------- outer about nav End---------------- */
+
+.scroll-tag {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 9999; /* Ensure the tag is above other content */
+  animation: bounce 1s infinite;
+  opacity: 60%;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.scroll-tag .arrow {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid white;
+  margin-bottom: 5px; /* Spacing between arrow and text */
+  display: block;
+  margin: 0 auto;
+}
