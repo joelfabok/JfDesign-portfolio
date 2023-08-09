@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validation
     if (empty($name) || empty($email)) {
         // Redirect back to index.html with an error message
-        header("Location: https://www.joelfabok.com?error=1");
+        header("Location: https://www.spheredigital.ca?error=1");
         exit;
     }
 
@@ -26,11 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['form_success'] = true;
 
         // Redirect back to index.html with success message
-        header("Location: https://www.joelfabok.com?success=1");
+        header("Location: https://www.spheredigital.ca?success=1");
         exit;
     } else {
         // Redirect back to index.html with an error message
-        header("Location: https://www.joelfabok.com?error=2");
+        header("Location: https://www.spheredigital.ca?error=2");
         exit;
     }
 }
