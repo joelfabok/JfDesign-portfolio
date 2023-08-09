@@ -1947,7 +1947,11 @@ body {
   margin: 0 auto;
 }
 
-
+@media (max-width: 600px) {
+  .subheading {
+    font-size: medium;
+  }
+}
 
 .delayed-fade-in {
   opacity: 0;
