@@ -1946,3 +1946,17 @@ body {
   display: block;
   margin: 0 auto;
 }
+
+.delayed-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -57,7 +57,7 @@
                 <img src="assets/img/sphere_white.png" alt="Global" />
                 <p>Sphere Digital</p>
               </a>
-              <button class="header--cta cta">Hire Us</button>
+              <button class="header--cta cta">Lets Work Together</button>
               <div class="header--nav-toggle">
                 <span></span>
               </div>
@@ -68,7 +68,7 @@
                 <li><span>Works</span></li>
                 <li><span>About</span></li>
                 <li><span>Contact</span></li>
-                <li><span>Hire Us</span></li>
+                <li><span>Lets Work Together</span></li>
               </ul>
             </nav>
             <ul class="l-main-content main-content">
@@ -77,8 +77,15 @@
                   <div class="intro--banner css-typing">
                     <h1 class="">Welcome To</h1>
                     <h1 class="">Sphere Digital</h1>
+                    <h2
+                      class="sub heading"
+                      id="fadeInHeading"
+                      style="opacity: 0"
+                    >
+                      Crafting Excellence Through Web Design
+                    </h2>
                     <button class="cta">
-                      Hire Us
+                      Lets Work Together
                       <svg
                         version="1.1"
                         id="Layer_1"
@@ -100,8 +107,10 @@
                       </svg>
                       <span class="btn-background"></span>
                     </button>
+
                     <div class="scroll-tag" id="scroll-tag">
                       <span class="arrow"></span>
+
                       Scroll
                     </div>
                   </div>
@@ -469,7 +478,7 @@
         <li>Works</li>
         <li>About</li>
         <li>Contact</li>
-        <li>Hire Us</li>
+        <li>Lets Work Together</li>
       </ul>
     </div>
     <!-- ---------------------- -->
@@ -518,6 +527,15 @@
         );
     </script>
     <script src="assets/js/functions-min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // Delayed fading effect after 5 seconds
+        setTimeout(function () {
+          $("#fadeInHeading").css("opacity", "1");
+        }, 4000);
+      });
+    </script>
     <script>
       // Scroll to the "Works" section when the scroll tag is clicked
       document
