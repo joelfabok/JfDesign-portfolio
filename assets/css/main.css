@@ -1939,6 +1939,22 @@ body {
 }
 
 @media (max-width: 600px) {
+  .scroll-tag {
+    position: fixed;
+    bottom: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 9999; /* Ensure the tag is above other content */
+    animation: bounce 1s infinite;
+    opacity: 60%;
+  }
+}
+
+@media (max-width: 600px) {
   .subheading {
     font-size: 15px;
   }
