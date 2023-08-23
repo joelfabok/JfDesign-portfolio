@@ -847,7 +847,7 @@ body {
 }
 @media (max-width: 600px) {
   .intro--banner {
-    height: 450px;
+    height: 400px;
   }
   .intro--banner h1 {
     font-size: 43px;
@@ -1941,7 +1941,7 @@ body {
 @media (max-width: 600px) {
   .scroll-tag {
     position: fixed;
-    bottom: 120px;
+    bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
     color: white;
