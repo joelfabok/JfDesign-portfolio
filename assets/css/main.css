@@ -1610,7 +1610,7 @@ body {
   .work-request--options label {
     width: 150px;
     margin-bottom: 15px;
-    font-size: 14px;
+    font-size: 12px;
   }
   .work-request--options input[type="checkbox"]:checked + label svg {
     width: 12px;
@@ -1622,7 +1622,7 @@ body {
   .work-request--information .information-email,
   .work-request--information .information-comments {
     height: 40px;
-    font-size: 24px;
+    font-size: 16px;
   }
 }
 
@@ -1938,10 +1938,26 @@ body {
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .scroll-tag {
+    position: fixed;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 9999; /* Ensure the tag is above other content */
+    animation: bounce 1s infinite;
+    opacity: 60%;
+  }
+}
+
 @media (max-width: 600px) {
   .scroll-tag {
     position: fixed;
-    bottom: 100px;
+    bottom: 70px;
     left: 50%;
     transform: translateX(-50%);
     color: white;
