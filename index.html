@@ -45,7 +45,7 @@
 
     gtag("config", "G-PHZK3LE218");
   </script>
-  <body>
+  <body onload="checkForUpdate()">
     <!-- notification for small viewports and landscape oriented smartphones -->
     <div class="device-notification">
       <a class="device-notification--logo" href=".home">
@@ -562,6 +562,28 @@
           $("#fadeInHeading").css("opacity", "1");
         }, 4000);
       });
+    </script>
+    <script>
+      function checkForUpdate() {
+        if (
+          window.applicationCache != undefined &&
+          window.applicationCache != null
+        ) {
+          window.applicationCache.addEventListener(
+            "updateready",
+            updateApplication
+          );
+        }
+      }
+      function updateApplication(event) {
+        if (window.applicationCache.status != 4) return;
+        window.applicationCache.removeEventListener(
+          "updateready",
+          updateApplication
+        );
+        window.applicationCache.swapCache();
+        window.location.reload();
+      }
     </script>
   </body>
 </html>
