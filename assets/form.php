@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Prepare email message
-    $to = 'joel@spheredigital.ca'; 
+    $to = 'joelfabok@gmail.com'; 
     $subject = 'Work Request From Spheredigital.ca';
     $message = 'Options: ' . implode(', ', $options) . "\n";
     $message .= 'Name: ' . $name . "\n";
